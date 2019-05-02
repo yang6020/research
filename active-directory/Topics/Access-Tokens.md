@@ -15,7 +15,6 @@ Variable
 - refreshTokensTimer - Observable.timer(initial delay, interval);
     - timer to refresh tokens
     - Observable timer (0, number) starts immediately when it's called
-    - TOD0: after getting real expiration time, use that for the interval
 
 Functions
 - <code>getQueryVariable()</code>
@@ -31,7 +30,6 @@ Functions
 - <code>inSession()</code>
     - used as a helper function of start session
     - returns a boolean depending on if there's an id_token in localStorage
-    - TODO: add token validation here
 
 - <code>startSession()</code>
     - if there is a logged in user/ a session, start the timer
@@ -53,18 +51,12 @@ Functions
         - 'tid' (tenantId)
         - 'iss' (who issued the token)
 
-## WIP/TODO:
+### ETC
 - Timing for localstorage tokens + graph calls
 - Token Validation (jwt-decode)
     - also for timer
-- Remove invite to enterprise app and Graph API access token from the front_end
-- Remove ADAL
 - Make a service in the backend to get and inject Graph API access token
-- Invite user in the backend with Graph API access token
-
-
-
-
+- Invite user to the enterprise app the backend with Graph API access token
 
 -----
 
@@ -137,7 +129,7 @@ How to get:
     - Client Portal's value for scope is 'openid%20offline_access'
 
 If successful, you will be redirected to your replyUrl with a code on the address bar. It will look like this:
-<img src="../../../assets/Active-Directory-Images/authorize.png" >
+<img src="../assets/authorize.png" >
 
 ### 2) Request access token
  - POST request to :
@@ -176,7 +168,7 @@ How to get:
     - On save, a key value will be shown, be sure get the key before leaving the page as it will only display this once. This is your client_secret
 
 If successful, you will receive a JSON object like this:
-<img src="../../../assets/Active-Directory-Images/access-token.png" >
+<img src="../assets/access-token.png" >
 
 The access_token is what you will need for [Microsoft Graph](./Microsoft-Graph.md/#microsoftgraph) or [Graph API](./Graph-API.md/#graph) Queries
 

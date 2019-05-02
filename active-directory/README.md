@@ -1,7 +1,6 @@
 <a name="ad"> </a>
 
-[back to Table of Contents](../../README.md/#toc)
-# **Active Directory Basics (AD)**<sub><img src="../../assets/Active-Directory-Images/azure.png" height="50"></sub>
+# **Active Directory Basics (AD)**<sub><img src="./assets/azure.png" height="50"></sub>
 
 
 ## Quick Overview

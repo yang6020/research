@@ -8,7 +8,7 @@
 
 Microsoft Graph is an API platform that enables developers to connect to many types of resources (ex. Users, Groups) and allows you to manipulate them all though a single endpoint - https://graph.microsoft.com
 
-<img src="../../../assets/Active-Directory-Images/microsoft-graph.png" >
+<img src="../assets/microsoft-graph.png" >
 
 ----
 

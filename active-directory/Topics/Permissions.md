@@ -85,7 +85,7 @@ How to create app roles
 Get a new one [here](https://www.guidgenerator.com/)
 
     it will look something like this (appRole id's are dummy values).
-    <img src="../../../assets/Active-Directory-Images/appRole.png">
+    <img src="../assets/appRole.png">
 
 
 <a name="userPermissions"></a>
@@ -114,7 +114,7 @@ How to edit this
  - It's possible to <a href="./Microsoft-Graph.md/#invite">invite a user</a>  as a  Member instead in the request body if the person sending the invitation has sufficient permission.
     -   (see invitedUserType property in [invitation object](https://docs.microsoft.com/en-us/graph/api/resources/invitation?view=graph-rest-1.0) for your request body)
 
-<img src="../../../assets/Active-Directory-Images/memberVguest.png">
+<img src="../assets/memberVguest.png">
 
 
 <a name="groupPermissions"></a>
