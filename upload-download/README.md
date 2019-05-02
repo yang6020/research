@@ -70,9 +70,26 @@ To download files faster:
 - Transferring burden will lower our CPU% meaning we can have more users
 - I believe this is the best long term solution but it will require some time.
 
-### Conclusion (mine at least)
+## Conclusion (mine at least)
 **Fix the file download system + compress our files**
 1) Limit our communication with Azure by sending less so that we have more control (we can't change Azure things but we can change ours)
 2) Reduces stress on our App Service to be able to bring in more users
 3) Make response size very small like that of others (this may increase download speed).
+
+
+## UPDATE
+- Since we want to secure the blob storage, we need to have the infrastructure setup this way:
+```
+ storage -> api -> client
+ ```
+ therefore streaming the data twice is a must.
+
+ - Compression is an option
+ - CDN is still on the table (have to ask client)
+ - Looking at the file service functions can be a possible option but since we are using azure-storage (recommended library) it will be unlikely to find things to change
+ - Upgrading our app-service plan from S1 to S2 will happen (temp fix)
+
+ TODO
+ - Find if 'size' in network tab is high because it simply records the log from storage -> api -> client and we are simply getting a 5MB file still or if it really sends us duplicates.
+
 
