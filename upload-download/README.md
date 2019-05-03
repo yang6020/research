@@ -70,7 +70,7 @@ To download files faster:
 - Transferring burden will lower our CPU% meaning we can have more users
 - I believe this is the best long term solution but it will require some time.
 
-## Conclusion (mine at least)
+## Opinionated Recommendation
 **Fix the file download system + compress our files**
 1) Limit our communication with Azure by sending less so that we have more control (we can't change Azure things but we can change ours)
 2) Reduces stress on our App Service to be able to bring in more users
@@ -89,7 +89,12 @@ To download files faster:
  - Looking at the file service functions can be a possible option but since we are using azure-storage (recommended library) it will be unlikely to find things to change
  - Upgrading our app-service plan from S1 to S2 will happen (temp fix)
 
- TODO
- - Find if 'size' in network tab is high because it simply records the log from storage -> api -> client and we are simply getting a 5MB file still or if it really sends us duplicates.
+### Content-length in response header is around 3.5x the file size
+- Content length is the length of the response body
+ - I wasn't able to come to a definite answer but some people have mentioned that content-length is calculated as the whole call meaning it is recording the file body from storage -> api -> client therefore duplicating the log number
+- The data being received from the front end is still the file size so only the log is faulty
 
 
+-----
+## Conclusion
+since internet speed in this area took around 5-6  seconds downloading 5MB files in multiple test sites, and it takes around 10 seconds, we can say this is a believable metric for the app because our app has to download it once to the api, then another time to the client side whereas most applications download from the storage to the client directly.
